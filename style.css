@@ -1,67 +1,76 @@
+/* 全体の基本スタイル設定 */
 body {
-  font-family: sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  background-color: #fdf6e3;
+  font-family: sans-serif;            /* 文字のフォントをシンプルなサンセリフ体に設定 */
+  text-align: center;                 /* 中央揃え（テキストやボタンなど） */
+  margin-top: 50px;                   /* 上の余白を空ける */
+  background-color: #fdf6e3;          /* 背景色を淡いクリーム色に */
 }
 
+/* 中央のコンテナ*/
 .container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  display: inline-block;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background: #fff;                   /* 背景,白に */
+  padding: 30px;                      /* 内側の余白（スペース）を30px */
+  border-radius: 15px;                /* 枠の角を丸く */
+  display: inline-block;              /* 中央に配置しやすくするための設定 */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* うっすら影をつけて立体感を出す */
 }
 
+/* 全ボタン共通のデザイン */
 button {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+  padding: 10px 20px;                 /* 上下10px・左右20pxの内側余白 */
+  margin: 10px;                       /* 外側に10pxの余白 */
+  font-size: 1.2rem;                  /* 文字サイズを少しデカめに */
+  border-radius: 10px;                /* 角を少し丸く */
+  border: none;                       /* ボーダーを消す */
+  cursor: pointer;                    /* ホバー時にポインターに変える */
 }
 
+/* ジャンプボタン専用の色 */
 #jumpButton {
-  background-color: #f39c12;
-  color: white;
+  background-color: #f39c12;          /* オレンジ系の背景色 */
+  color: white;                       /* 文字色を白に */
 }
 
+/* スタートボタン専用の色 */
 #startButton {
-  background-color: #3498db;
-  color: white;
+  background-color: #3498db;          /* 青系の背景色 */
+  color: white;                       /* 文字色を白に */
 }
 
+/* ジャンプ結果の表示部分 */
 #result {
-  font-size: 1.3rem;
-  margin-top: 20px;
+  font-size: 1.3rem;                  /* 少しデカめの文字サイズ */
+  margin-top: 20px;                   /* 上に余白を20px追加 */
 }
 
-
+/* キャラクターを表示するエリア */
 #gameArea {
-  position: relative;
-  height: 200px;
-  margin: 20px auto;
-  background: #e0f7fa;
-  border-radius: 10px;
-  overflow: hidden;
+  position: relative;                 /* 子要素（おじさん）を位置指定できるように */
+  height: 200px;                      /* 高さを200pxに固定 */
+  margin: 20px auto;                  /* 上下に20px、左右は中央配置 */
+  background: #e0f7fa;                /* 水色系の背景 */
+  border-radius: 10px;                /* 角を少し丸く */
+  overflow: hidden;                   /* はみ出た部分は非表示（ジャンプの視覚効果用） */
 }
 
+/* キャラクター画像のスタイル */
 #character {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 120px;
-  transition: transform 0.3s;
+  position: absolute;                 /* 親の中で自由に配置する */
+  bottom: 0;                          /* 下にくっつける */
+  left: 50%;                          /* 左端から50%の位置に */
+  transform: translateX(-50%);        /* 中心を画像の中央に合わせる */
+  height: 120px;                      /* キャラクターの高さ */
+  transition: transform 0.3s;         /* スムーズな動きにする（将来的な拡張用） */
 }
 
+/* ジャンプ中に適用されるクラス（アニメーション指定） */
 .jump {
-  animation: jumpAnim 0.8s ease-out forwards;
+  animation: jumpAnim 0.8s ease-out forwards; /* ジャンプアニメーションを実行 */
 }
 
+/* ジャンプの動き（上がって下りる）を定義する */
 @keyframes jumpAnim {
-  0%   { bottom: 0; }
-  40%  { bottom: 100px; }
-  100% { bottom: 0; }
+  0%   { bottom: 0; }                 /* 開始位置：地面にいる */
+  40%  { bottom: 100px; }             /* 中間地点：100pxジャンプする */
+  100% { bottom: 0; }                 /* 最終位置：地面に戻る */
 }
