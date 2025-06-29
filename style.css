@@ -1,0 +1,67 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #fdf6e3;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#jumpButton {
+  background-color: #f39c12;
+  color: white;
+}
+
+#startButton {
+  background-color: #3498db;
+  color: white;
+}
+
+#result {
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+
+#gameArea {
+  position: relative;
+  height: 200px;
+  margin: 20px auto;
+  background: #e0f7fa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#character {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120px;
+  transition: transform 0.3s;
+}
+
+.jump {
+  animation: jumpAnim 0.8s ease-out forwards;
+}
+
+@keyframes jumpAnim {
+  0%   { bottom: 0; }
+  40%  { bottom: 100px; }
+  100% { bottom: 0; }
+}
