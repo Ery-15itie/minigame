@@ -25,21 +25,24 @@ startButton.onclick = () => {
   // --- 時刻記録 ---
   startTime = performance.now();
 
-  // --- 0.05秒ごとにタイムチェック＆表示更新 ---
+  // タイマー部分を 0.1秒間隔 & 3秒制限で表示に変更
+
   gameTimer = setInterval(() => {
     let elapsed = (performance.now() - startTime) / 1000;
-    let rounded = parseFloat(elapsed.toFixed(2));
+    let rounded = parseFloat(elapsed.toFixed(1));
 
-    // 経過時間を表示
-    timerDisplay.textContent = `経過時間: ${rounded} 秒`;
+    if (elapsed <= 3.0) {
+      timerDisplay.textContent = `経過時間: ${rounded} 秒`;
+    } else {
+      timerDisplay.textContent = "";
+    }
 
-    // タイムオーバーしたら自動終了
     if (elapsed >= totalTime && !jumped) {
       clearInterval(gameTimer);
       jumpButton.disabled = true;
       result.textContent = "時間切れ！ジャンプせずに終了！";
     }
-  }, 50);
+  }, 100);
 };
 
 // ジャンプボタンを押したときの処理
@@ -68,11 +71,11 @@ jumpButton.onclick = () => {
   character.classList.add("jump");
 
   // --- 結果判定 ---
-  if (rounded >= 7.09 && rounded <= 7.11) {
+  if (rounded >= 7.05 && rounded <= 7.15) {
     result.textContent = `🎯 大成功！神業ジャンプ！ (${rounded.toFixed(2)} 秒)`;
-  } else if (rounded >= 6.70 && rounded <= 7.60) {
+  } else if (rounded >= 6.60 && rounded <= 7.60) {
     result.textContent = `⭕ 成功！ナイスジャンプ (${rounded.toFixed(2)} 秒)`;
-  } else if (rounded < 6.70) {
+  } else if (rounded < 6.60) {
     result.textContent = `❌ 残念、早すぎぃ〜 (${rounded.toFixed(2)} 秒)`;
   } else {
     result.textContent = `❌ 残念、遅すぎぃ〜 (${rounded.toFixed(2)} 秒)`;
