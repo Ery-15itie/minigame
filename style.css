@@ -43,6 +43,36 @@ button {
   margin-top: 20px;                   /* 上に余白を20px追加 */
 }
 
+/* 成功条件ルール表示のデザイン（コンパクト＆左寄せ） */
+.rules {
+  margin: 20px auto 0 auto;
+  background-color: #f0f8ff; /* 水色背景 */
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: left;
+  display: block;
+  width: 300px;              /* コンパクトサイズ（だいたい半分幅） */
+  font-size: 0.9rem;         /* 少し小さめな文字サイズ */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.rules h2 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.rules ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.rules li {
+  margin-bottom: 4px;
+}
+
+
 /* キャラクターを表示するエリア */
 #gameArea {
   position: relative;                 /* 子要素（おじさん）を位置指定できるように */
@@ -59,7 +89,7 @@ button {
   bottom: 0;                          /* 下にくっつける */
   left: 50%;                          /* 左端から50%の位置に */
   transform: translateX(-50%);        /* 中心を画像の中央に合わせる */
-  height: 120px;                      /* キャラクターの高さ */
+  height: 240px;                      /* キャラクターの高さ */
   transition: transform 0.3s;         /* スムーズな動きにする（将来的な拡張用） */
 }
 
