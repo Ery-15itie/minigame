@@ -72,6 +72,33 @@ button {
   margin-bottom: 4px;
 }
 
+/* シェアボタンのコンテナ */
+#shareArea {
+    margin-top: 20px; /* 結果表示との間に余白 */
+}
+
+/* シェアボタンのスタイル */
+#shareButton {
+    background-color: #1DA1F2; /* 青で*/
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#shareButton:hover {
+    background-color: #0c85d0; /* ホバーで少し濃く */
+    transform: translateY(-2px);
+}
+
+#shareButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
 /* キャラクターを表示するエリア */
 #gameArea {
