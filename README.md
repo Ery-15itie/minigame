@@ -1,4 +1,5 @@
 # ミニゲーム制作
+[ゲームはこちら](https://ery-15itie.github.io/minigame/)
 
 制作過程でのポイントはnoteから
 [note](https://note.com/ery_ashiato/n/n5a0c73c20e8a)
